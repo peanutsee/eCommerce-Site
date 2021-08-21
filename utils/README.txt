@@ -1,0 +1,1 @@
+Utils handles the utility components like connecting database to the stack.
