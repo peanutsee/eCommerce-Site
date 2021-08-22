@@ -1,11 +1,10 @@
-import React from 'react'
+import connectDb from "../../utils/connectDb";
+import Product from '../../models/Product'
 
-function product() {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+connectDb();
 
-export default product
+export default async (req, res) => {
+    const { _id } = req.query;
+  const products = await Product.findOne({ _id: _id });
+  res.status(200).json(products);
+};
